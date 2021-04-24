@@ -15,4 +15,7 @@ export default {
   getTrackers() {
     return apiClient.get('/tracker')
   },
+  getTracker(id) {
+    return apiClient.get('/tracker/' + id)
+  },
 }

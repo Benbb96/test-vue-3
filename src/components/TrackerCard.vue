@@ -1,14 +1,19 @@
 <template>
-  <div
-    class="tracker-card"
-    :style="{
-      'background-color': tracker.color,
-      color: tracker.contrast_color,
-    }"
+  <router-link 
+    class="event-link"
+    :to="{ name: 'TrackerDetail', params: { id: tracker.id } }"
   >
-    <h4>{{ tracker.nom }}</h4>
-    <span>Créé le {{ tracker.date_creation }}</span>
-  </div>
+    <div
+      class="tracker-card"
+      :style="{
+        'background-color': tracker.color,
+        color: tracker.contrast_color,
+      }"
+    >
+      <h4><i :class="'fas fa-' + tracker.icone"></i> {{ tracker.nom }}</h4>
+      <span>Créé le {{ tracker.date_creation }}</span>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -35,5 +40,9 @@ export default {
 .tracker-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.event-link {
+  text-decoration: none;
 }
 </style>
