@@ -1,5 +1,5 @@
 <template>
-  <router-link 
+  <router-link
     class="event-link"
     :to="{ name: 'TrackerDetail', params: { id: tracker.id } }"
   >

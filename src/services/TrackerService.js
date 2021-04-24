@@ -1,5 +1,5 @@
 import axios from 'axios'
-import credentials from './credentials.js'
+import credentials from '../../credentials.js'
 
 const apiClient = axios.create({
   baseURL: 'https://www.benbb96.com/fr/tracker/api',
