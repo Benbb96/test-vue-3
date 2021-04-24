@@ -1,7 +1,13 @@
 <template>
-  <div class="tracker-card">
-    <span>@{{ tracker.time }} on {{ tracker.date }}</span>
-    <h4>{{ tracker.title }}</h4>
+  <div
+    class="tracker-card"
+    :style="{
+      'background-color': tracker.color,
+      color: tracker.contrast_color,
+    }"
+  >
+    <h4>{{ tracker.nom }}</h4>
+    <span>Créé le {{ tracker.date_creation }}</span>
   </div>
 </template>
 
@@ -18,8 +24,9 @@ export default {
 
 <style scoped>
 .tracker-card {
+  flex: 1;
   padding: 20px;
-  width: 250px;
+  margin: 30px;
   cursor: pointer;
   border: 1px solid #39495c;
   margin-bottom: 18px;

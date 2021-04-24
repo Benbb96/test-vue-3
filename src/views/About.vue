@@ -1,5 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <p>
+      Un petit site de test avec Vue.js afin de travailler sur mes trackers.
+    </p>
   </div>
 </template>
