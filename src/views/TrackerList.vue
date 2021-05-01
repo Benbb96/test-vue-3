@@ -11,7 +11,6 @@
 
 <script>
 import TrackerCard from '@/components/TrackerCard.vue'
-import TrackerService from '@/services/TrackerService.js'
 
 export default {
   name: 'TrackerList',
@@ -24,7 +23,8 @@ export default {
     }
   },
   created() {
-    TrackerService.getTrackers()
+    this.$store
+      .dispatch('getTrackers')
       .then((response) => {
         this.trackers = response.data
       })

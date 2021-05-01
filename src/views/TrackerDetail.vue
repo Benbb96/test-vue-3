@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import TrackerService from '@/services/TrackerService.js'
-
 export default {
   props: ['id'],
   data() {
@@ -22,7 +20,8 @@ export default {
     }
   },
   created() {
-    TrackerService.getTracker(this.id)
+    this.$store
+      .dispatch('getTracker', this.id)
       .then((response) => {
         this.tracker = response.data
       })
