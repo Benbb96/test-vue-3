@@ -30,12 +30,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.auth-link {
-  font-size: 0.8em;
-  text-decoration: underline;
-  color: #2c3e50;
-  cursor: pointer;
-}
-</style>

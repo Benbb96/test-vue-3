@@ -2,7 +2,7 @@ import axios from 'axios'
 import { createStore } from 'vuex'
 
 const apiClient = axios.create({
-  baseURL: 'https://www.benbb96.com/',
+  baseURL: 'http://192.168.1.85:8001/',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

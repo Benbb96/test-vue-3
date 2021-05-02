@@ -1,13 +1,16 @@
 <template>
   <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title>Vuetify Dashboard</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn text rounded :to="{ name: 'Home' }">Accueil</v-btn>
+      <v-btn v-if="user" text rounded :to="{ name: 'TrackerList' }">
+        Trackers
+      </v-btn>
+      <v-btn text rounded :to="{ name: 'About' }">A propos</v-btn>
+      <v-btn @click="toggleTheme" text rounded>Toggle Theme</v-btn>
+    </v-app-bar>
     <v-main>
-      <div id="nav">
-        <router-link :to="{ name: 'Home' }">Accueil</router-link> |
-        <template v-if="user">
-          <router-link :to="{ name: 'TrackerList' }">Trackers</router-link> |
-        </template>
-        <router-link :to="{ name: 'About' }">A propos</router-link>
-      </div>
       <router-view />
     </v-main>
   </v-app>
@@ -18,6 +21,12 @@ import axios from 'axios'
 
 export default {
   name: 'App',
+  methods: {
+    toggleTheme() {
+      this.$vuetify.theme.themes.dark.anchor = '#41B883'
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    },
+  },
   computed: {
     user() {
       return this.$store.state.user
@@ -44,30 +53,3 @@ export default {
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-h4 {
-  font-size: 20px;
-}
-</style>
