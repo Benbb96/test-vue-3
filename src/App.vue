@@ -10,9 +10,9 @@
       <v-btn text rounded :to="{ name: 'About' }">A propos</v-btn>
       <v-btn @click="toggleTheme" text rounded>Toggle Theme</v-btn>
     </v-app-bar>
-    <v-main>
+    <v-content>
       <router-view />
-    </v-main>
+    </v-content>
   </v-app>
 </template>
 
