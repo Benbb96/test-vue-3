@@ -1,18 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link :to="{ name: 'Home' }">Accueil</router-link> |
-    <template v-if="user">
-      <router-link :to="{ name: 'TrackerList' }">Trackers</router-link> |
-    </template>
-    <router-link :to="{ name: 'About' }">A propos</router-link>
-  </div>
-  <router-view />
+  <v-app>
+    <v-main>
+      <div id="nav">
+        <router-link :to="{ name: 'Home' }">Accueil</router-link> |
+        <template v-if="user">
+          <router-link :to="{ name: 'TrackerList' }">Trackers</router-link> |
+        </template>
+        <router-link :to="{ name: 'About' }">A propos</router-link>
+      </div>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
+  name: 'App',
   computed: {
     user() {
       return this.$store.state.user

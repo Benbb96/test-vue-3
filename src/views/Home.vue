@@ -19,11 +19,14 @@
         Se déconnecter
       </button>
     </template>
+    <hello-world />
   </div>
 </template>
 
 <script>
+import HelloWorld from '../components/HelloWorld.vue'
 export default {
+  components: { HelloWorld },
   computed: {
     user() {
       return this.$store.state.user
